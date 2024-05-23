@@ -14,9 +14,9 @@ function divide(a, b) {
     return a / b;
 }
 
-let num1;
+let value1;
 let operator;
-let num2;
+let value2;
 
 function operate(num1, operator, num2) {
     let answer;
@@ -37,5 +37,5 @@ function operate(num1, operator, num2) {
     return answer;
 };
 
-let answer = operate(6, "plus", 3);
-console.log(answer);
+let result = operate(6, "plus", 3);
+console.log(result);

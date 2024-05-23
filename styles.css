@@ -2,3 +2,13 @@
     color: rgb(209, 213, 219);
     background-color: rgb(17, 24,39);
 }
+
+#display {
+    font-size: 50px
+}
+
+button {
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+}
