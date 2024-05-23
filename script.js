@@ -37,10 +37,7 @@ function operate(num1, operator, num2) {
     return answer;
 };
 
-let result = operate(6, "plus", 3);
-console.log(result);
-
-let displayValue = []
+let displayValue = "";
 
 const container = document.querySelector("#display");
 
@@ -52,13 +49,46 @@ container.appendChild(content);
 const btn1 = document.querySelector("#one");
 btn1.addEventListener("click", () => {
     content.textContent += "1";
-    displayValue.push(1);
+    displayValue += "1";
     console.log(displayValue);
 });
 
 const btn2 = document.querySelector("#two");
 btn2.addEventListener("click", () => {
     content.textContent += "2";
-    displayValue.push(2);
+    displayValue += "2";
     console.log(displayValue);
+});
+
+const btn3 = document.querySelector("#three");
+btn3.addEventListener("click", () => {
+    content.textContent += "3";
+    displayValue += "3";
+    console.log(displayValue);
+});
+
+const btnPlus = document.querySelector("#plus");
+btnPlus.addEventListener("click", () => {
+    content.textContent = "+ ";
+    value1 = parseInt(displayValue);
+    console.log(value1);
+    displayValue = "";
+    operator = "plus"
+});
+
+const btnEquals = document.querySelector("#equals");
+btnEquals.addEventListener("click", () => {
+    value2 = parseInt(displayValue);
+    console.log(value2);
+    let result = operate(value1, operator, value2);
+    content.textContent = result;
+    value1 = result;
+});
+
+const btnClear = document.querySelector("#clear");
+btnClear.addEventListener("click", () => {
+    value1 = 0;
+    value2 = 0;
+    operator = "";
+    content.textContent = "0";
 });
