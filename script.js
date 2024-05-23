@@ -39,3 +39,26 @@ function operate(num1, operator, num2) {
 
 let result = operate(6, "plus", 3);
 console.log(result);
+
+let displayValue = []
+
+const container = document.querySelector("#display");
+
+const content = document.createElement("div");
+
+content.textContent = "0";
+container.appendChild(content);
+
+const btn1 = document.querySelector("#one");
+btn1.addEventListener("click", () => {
+    content.textContent += "1";
+    displayValue.push(1);
+    console.log(displayValue);
+});
+
+const btn2 = document.querySelector("#two");
+btn2.addEventListener("click", () => {
+    content.textContent += "2";
+    displayValue.push(2);
+    console.log(displayValue);
+});
