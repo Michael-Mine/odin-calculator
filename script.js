@@ -84,10 +84,12 @@ btnPlus.addEventListener("click", () => {
 
 const btnEquals = document.querySelector("#equals");
 btnEquals.addEventListener("click", () => {
-    value2 = parseInt(displayValue);
-    let result = operate(value1, operator, value2);
-    content.textContent = "= " + result;
-    value1 = result;
+    if (value1 > 0) {
+        value2 = parseInt(displayValue);
+        let result = operate(value1, operator, value2);
+        content.textContent = "= " + result;
+        value1 = result;
+    };
 });
 
 const btnClear = document.querySelector("#clear");
