@@ -146,27 +146,10 @@ btnPlus.addEventListener("click", () => {
     };
 });
 
-const btnEquals = document.querySelector("#equals");
-btnEquals.addEventListener("click", () => {
-    if ((value1 === 0 || value2 === 0) && (operator === "division")) {
-        alert("Error: Cannot divide by zero!");
-        displayValue = "";
-    }
-    if ((value1 != 0) && (displayValue !== "")) {
-        value2 = parseInt(displayValue);
-        let result = operate(value1, operator, value2);
-        content.textContent = "= " + (result).toPrecision(8);
-        value1 = result;
-        value2 = 0;
-        displayValue = "";
-        operator = 0
-    };
-});
-
 const btnClear = document.querySelector("#clear");
 btnClear.addEventListener("click", () => {
     value1 = 0;
-    value2 = 0;
+    value2 = "";
     operator = "";
     content.textContent = "0";
 });
@@ -224,6 +207,31 @@ btnDivide.addEventListener("click", () => {
         let result = operate(value1, operator, value2);
         content.textContent = "= " + result + " / ";
         value1 = result;
+        value2 = "";
         displayValue = "";
+    };
+});
+
+const btnEquals = document.querySelector("#equals");
+btnEquals.addEventListener("click", () => {
+    if ((value1 === 0 || value2 === 0) && (operator === "division")) {
+        alert("Error: Cannot divide by zero!");
+        value1 = 0;
+        value2 = "";
+        displayValue = "";
+        content.textContent = "0";
+    }
+    if ((value1 != 0) && (displayValue !== "")) {
+        value2 = parseInt(displayValue);
+        let result = operate(value1, operator, value2);
+        if (Number.isInteger(result)) {
+            content.textContent = "= " + result;
+        } else {
+            content.textContent = "= " + (result).toPrecision(8);
+        }
+        value1 = result;
+        value2 = 0;
+        displayValue = "";
+        operator = 0
     };
 });
