@@ -111,7 +111,6 @@ btnClear.addEventListener("click", () => {
     content.textContent = "0";
 });
 
-
 const btnMinus = document.querySelector("#minus");
 btnMinus.addEventListener("click", () => {
     operator = "minus";
@@ -119,13 +118,32 @@ btnMinus.addEventListener("click", () => {
         value1 = parseInt(displayValue);
         content.textContent += " - ";
         displayValue = "";
-    } else if (value2 === 0){
+    } else if (value2 === 0) {
         content.textContent += " - ";
         displayValue = "";
-    } else {
+    } else if (displayValue !== "") {
         value2 = parseInt(displayValue);
         let result = operate(value1, operator, value2);
         content.textContent = "= " + result + " - ";
+        value1 = result;
+        displayValue = "";
+    };
+});
+
+const btnTimes = document.querySelector("#times");
+btnTimes.addEventListener("click", () => {
+    operator = "times";
+    if (value1 === 0) {
+        value1 = parseInt(displayValue);
+        content.textContent += " x ";
+        displayValue = "";
+    } else if (value2 === 0) {
+        content.textContent += " x ";
+        displayValue = "";
+    } else if (displayValue !== "") {
+        value2 = parseInt(displayValue);
+        let result = operate(value1, operator, value2);
+        content.textContent = "= " + result + " x ";
         value1 = result;
         displayValue = "";
     };
