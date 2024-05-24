@@ -70,6 +70,54 @@ btn3.addEventListener("click", () => {
     };
 });
 
+const btn4 = document.querySelector("#four");
+btn4.addEventListener("click", () => {
+    if (operator !== 0) {
+        content.textContent += "4";
+        displayValue += "4";
+    };
+});
+
+const btn5 = document.querySelector("#five");
+btn5.addEventListener("click", () => {
+    if (operator !== 0) {
+        content.textContent += "5";
+        displayValue += "5";
+    };
+});
+
+const btn6 = document.querySelector("#six");
+btn6.addEventListener("click", () => {
+    if (operator !== 0) {
+        content.textContent += "6";
+        displayValue += "6";
+    };
+});
+
+const btn7 = document.querySelector("#seven");
+btn7.addEventListener("click", () => {
+    if (operator !== 0) {
+        content.textContent += "7";
+        displayValue += "7";
+    };
+});
+
+const btn8 = document.querySelector("#eight");
+btn8.addEventListener("click", () => {
+    if (operator !== 0) {
+        content.textContent += "8";
+        displayValue += "8";
+    };
+});
+
+const btn9 = document.querySelector("#nine");
+btn9.addEventListener("click", () => {
+    if (operator !== 0) {
+        content.textContent += "9";
+        displayValue += "9";
+    };
+});
+
 const btn0 = document.querySelector("#zero");
 btn0.addEventListener("click", () => {
     if (operator !== 0) {
