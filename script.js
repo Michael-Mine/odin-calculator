@@ -155,7 +155,7 @@ btnEquals.addEventListener("click", () => {
     if ((value1 != 0) && (displayValue !== "")) {
         value2 = parseInt(displayValue);
         let result = operate(value1, operator, value2);
-        content.textContent = "= " + result;
+        content.textContent = "= " + (result).toPrecision(8);
         value1 = result;
         value2 = 0;
         displayValue = "";
