@@ -81,7 +81,7 @@ btnPlus.addEventListener("click", () => {
         content.textContent += " + ";
         value2 = parseInt(displayValue);
         displayValue = "";
-    } else {
+    } else if (displayValue !== "") {
         value2 = parseInt(displayValue);
         let result = operate(value1, operator, value2);
         content.textContent = "= " + result + " + ";
