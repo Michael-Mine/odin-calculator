@@ -73,6 +73,8 @@ btnPlus.addEventListener("click", () => {
         value1 = parseInt(displayValue);
         content.textContent += " + ";
         displayValue = "";
+    } else if (value2 === 0){
+        content.textContent += " + ";
     } else {
         value2 = parseInt(displayValue);
         let result = operate(value1, operator, value2);
@@ -89,6 +91,8 @@ btnEquals.addEventListener("click", () => {
         let result = operate(value1, operator, value2);
         content.textContent = "= " + result;
         value1 = result;
+        value2 = 0;
+        displayValue = "";
     };
 });
 
@@ -99,3 +103,20 @@ btnClear.addEventListener("click", () => {
     operator = "";
     content.textContent = "0";
 });
+
+
+// const btnMinus = document.querySelector("#minus");
+// btnMinus.addEventListener("click", () => {
+//     operator = "minus";
+//     if (value1 === 0) {
+//         value1 = parseInt(displayValue);
+//         content.textContent += " - ";
+//         displayValue = "";
+//     } else {
+//         value2 = parseInt(displayValue);
+//         let result = operate(value1, operator, value2);
+//         content.textContent = "= " + result + " - ";
+//         value1 = result;
+//         displayValue = "";
+//     };
+// });
