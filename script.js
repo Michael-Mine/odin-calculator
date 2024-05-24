@@ -86,7 +86,7 @@ btnPlus.addEventListener("click", () => {
 
 const btnEquals = document.querySelector("#equals");
 btnEquals.addEventListener("click", () => {
-    if (value1 > 0) {
+    if ((value1 > 0) && (displayValue !== "")) {
         value2 = parseInt(displayValue);
         let result = operate(value1, operator, value2);
         content.textContent = "= " + result;
