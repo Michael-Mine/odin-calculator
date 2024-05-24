@@ -75,6 +75,8 @@ btnPlus.addEventListener("click", () => {
         displayValue = "";
     } else if (value2 === 0){
         content.textContent += " + ";
+        value2 = parseInt(displayValue);
+        displayValue = "";
     } else {
         value2 = parseInt(displayValue);
         let result = operate(value1, operator, value2);
@@ -86,7 +88,7 @@ btnPlus.addEventListener("click", () => {
 
 const btnEquals = document.querySelector("#equals");
 btnEquals.addEventListener("click", () => {
-    if ((value1 > 0) && (displayValue !== "")) {
+    if ((value1 != 0) && (displayValue !== "")) {
         value2 = parseInt(displayValue);
         let result = operate(value1, operator, value2);
         content.textContent = "= " + result;
@@ -105,18 +107,21 @@ btnClear.addEventListener("click", () => {
 });
 
 
-// const btnMinus = document.querySelector("#minus");
-// btnMinus.addEventListener("click", () => {
-//     operator = "minus";
-//     if (value1 === 0) {
-//         value1 = parseInt(displayValue);
-//         content.textContent += " - ";
-//         displayValue = "";
-//     } else {
-//         value2 = parseInt(displayValue);
-//         let result = operate(value1, operator, value2);
-//         content.textContent = "= " + result + " - ";
-//         value1 = result;
-//         displayValue = "";
-//     };
-// });
+const btnMinus = document.querySelector("#minus");
+btnMinus.addEventListener("click", () => {
+    operator = "minus";
+    if (value1 === 0) {
+        value1 = parseInt(displayValue);
+        content.textContent += " - ";
+        displayValue = "";
+    } else if (value2 === 0){
+        content.textContent += " - ";
+        displayValue = "";
+    } else {
+        value2 = parseInt(displayValue);
+        let result = operate(value1, operator, value2);
+        content.textContent = "= " + result + " - ";
+        value1 = result;
+        displayValue = "";
+    };
+});
