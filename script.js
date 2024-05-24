@@ -48,22 +48,26 @@ container.appendChild(content);
 
 const btn1 = document.querySelector("#one");
 btn1.addEventListener("click", () => {
-    content.textContent += "1";
-    displayValue += "1";
-    console.log(displayValue);
+    if (operator !== 0) {
+        content.textContent += "1";
+        displayValue += "1";
+    };
 });
 
 const btn2 = document.querySelector("#two");
 btn2.addEventListener("click", () => {
-    content.textContent += "2";
-    displayValue += "2";
-    console.log(displayValue);
+    if (operator !== 0) {
+        content.textContent += "2";
+        displayValue += "2";
+    };
 });
 
 const btn3 = document.querySelector("#three");
 btn3.addEventListener("click", () => {
-    content.textContent += "3";
-    displayValue += "3";
+    if (operator !== 0) {
+        content.textContent += "3";
+        displayValue += "3";
+    };
 });
 
 const btnPlus = document.querySelector("#plus");
@@ -95,6 +99,7 @@ btnEquals.addEventListener("click", () => {
         value1 = result;
         value2 = 0;
         displayValue = "";
+        operator = 0
     };
 });
 
