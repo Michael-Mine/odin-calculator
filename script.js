@@ -14,7 +14,7 @@ function divide(a, b) {
     return a / b;
 }
 
-let value1;
+let value1 = 0
 let operator;
 let value2;
 
@@ -64,24 +64,29 @@ const btn3 = document.querySelector("#three");
 btn3.addEventListener("click", () => {
     content.textContent += "3";
     displayValue += "3";
-    console.log(displayValue);
 });
 
 const btnPlus = document.querySelector("#plus");
 btnPlus.addEventListener("click", () => {
-    content.textContent = "+ ";
-    value1 = parseInt(displayValue);
-    console.log(value1);
-    displayValue = "";
-    operator = "plus"
+    operator = "plus";
+    if (value1 === 0) {
+        value1 = parseInt(displayValue);
+        content.textContent += " + ";
+        displayValue = "";
+    } else {
+        value2 = parseInt(displayValue);
+        let result = operate(value1, operator, value2);
+        content.textContent = "= " + result + " + ";
+        value1 = result;
+        displayValue = "";
+    };
 });
 
 const btnEquals = document.querySelector("#equals");
 btnEquals.addEventListener("click", () => {
     value2 = parseInt(displayValue);
-    console.log(value2);
     let result = operate(value1, operator, value2);
-    content.textContent = result;
+    content.textContent = "= " + result;
     value1 = result;
 });
 
