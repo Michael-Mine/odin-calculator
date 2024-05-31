@@ -197,7 +197,13 @@ btnTimes.addEventListener("click", () => {
 const btnDivide = document.querySelector("#divide");
 btnDivide.addEventListener("click", () => {
     operator = "division";
-    if (value1 === 0) {
+    if ((value1 === 0) && (displayValue == "") || displayValue === "0") {
+        alert("Error: Cannot divide by zero!");
+        value1 = 0;
+        value2 = "";
+        displayValue = "";
+        content.textContent = "0";
+    } else if ((value1 === 0) && (displayValue !== "")) {
         value1 = parseInt(displayValue);
         content.textContent += " / ";
         displayValue = "";
@@ -205,12 +211,12 @@ btnDivide.addEventListener("click", () => {
         content.textContent += " / ";
         value2 = parseInt(displayValue);
         displayValue = "";
-    } else if (displayValue !== "") {
+    } else if ((value1 !== 0) && (displayValue !== "")) {
         value2 = parseInt(displayValue);
         let result = operate(value1, operator, value2);
         content.textContent = "= " + result + " / ";
         value1 = result;
-        value2 = "";
+        value2 = 0;
         displayValue = "";
     };
 });
