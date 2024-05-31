@@ -1,6 +1,7 @@
 * {
     color: rgb(209, 213, 219);
     background-color: rgb(17, 24,39);
+    
 }
 
 #display {
@@ -8,7 +9,19 @@
 }
 
 button {
-    width: 100px;
+    width: 90px;
     height: 100px;
     font-size: 40px;
+    background-color: rgba(0, 255, 157, 0.243);
+    margin: 1px;
+    border-radius: 5%;
+    font-weight: initial;
+}
+
+.operations {
+    background-color: rgba(0, 128, 255, 0.15);
+}
+
+#clear {
+    background-color: rgba(255, 0, 0, 0.239);
 }
