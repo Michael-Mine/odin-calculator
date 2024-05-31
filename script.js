@@ -217,7 +217,7 @@ btnDivide.addEventListener("click", () => {
 
 const btnEquals = document.querySelector("#equals");
 btnEquals.addEventListener("click", () => {
-    if ((value1 === 0 || value2 === 0) && (operator === "division")) {
+    if ((value1 === 0 || displayValue === "0") && (operator === "division")) {
         alert("Error: Cannot divide by zero!");
         value1 = 0;
         value2 = "";
@@ -236,6 +236,5 @@ btnEquals.addEventListener("click", () => {
         value2 = 0;
         displayValue = "";
         operator = 0;
-        console.log(value1);
     };
 });
