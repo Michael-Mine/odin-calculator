@@ -163,6 +163,7 @@ btnMinus.addEventListener("click", () => {
         displayValue = "";
     } else if (value2 === 0) {
         content.textContent += " - ";
+        value2 = parseInt(displayValue);
         displayValue = "";
     } else if (displayValue !== "") {
         value2 = parseInt(displayValue);
@@ -182,6 +183,7 @@ btnTimes.addEventListener("click", () => {
         displayValue = "";
     } else if (value2 === 0) {
         content.textContent += " x ";
+        value2 = parseInt(displayValue);
         displayValue = "";
     } else if (displayValue !== "") {
         value2 = parseInt(displayValue);
@@ -201,6 +203,7 @@ btnDivide.addEventListener("click", () => {
         displayValue = "";
     } else if (value2 === 0) {
         content.textContent += " / ";
+        value2 = parseInt(displayValue);
         displayValue = "";
     } else if (displayValue !== "") {
         value2 = parseInt(displayValue);
@@ -232,6 +235,7 @@ btnEquals.addEventListener("click", () => {
         value1 = result;
         value2 = 0;
         displayValue = "";
-        operator = 0
+        operator = 0;
+        console.log(value1);
     };
 });
